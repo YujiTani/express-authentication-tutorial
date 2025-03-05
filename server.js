@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
 
-import basicAuth from "./auth.js";
+import basicAuth from "./auth/basicAuth.js";
 
 dotenv.config();
 
@@ -22,10 +22,14 @@ app.use("*", express.urlencoded({ extended: true }));
 app.use("*", express.json());
 app.use("*", basicAuth);
 
+app.use((err, req, res, next) => {
+	console.error(err.stack);
+	res.status(500).send("エラーが発生しました");
+});
+
 // routes
 app.get("/", (_req, res) => {
 	try {
-		console.log("レンダリング");
 		res.render("index", {
 			title: "メインページ",
 			message: "Basic認証に成功しました！",

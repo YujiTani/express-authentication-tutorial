@@ -21,7 +21,6 @@ const basicAuth = (req, res, next) => {
 
 	const [username, password] = decodeCredentials(authHeader);
 
-	// ipassの検証
 	if (username !== auth.username || password !== auth.password) {
 		return res.status(401).send("認証に失敗しました");
 	}
