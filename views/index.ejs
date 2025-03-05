@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    
+    <div class="card success">
+      <div class="card-icon">✓</div>
+      <div class="card-content">
+        <h2><%= message %></h2>
+        <p>このページは保護されています。</p>
+      </div>
+    </div>
+    
+    <nav class="main-nav">
+      <a href="/about" class="nav-link">サブページへ <span class="arrow">→</span></a>
+    </nav>
+    
+    <div class="card">
+      <h2>コンテンツ</h2>
+      <p>これはデモ用のメインページです。モダンなUIデザインを採用しています。</p>
+      <div class="time-display">
+        <span class="time-label">現在時刻:</span>
+        <span class="time-value"><%= currentTime %></span>
+      </div>
+    </div>
+    
+    <footer>
+      <p>© <%= new Date().getFullYear() %> Basic認証デモ</p>
+    </footer>
+  </div>
+</body>
+</html>

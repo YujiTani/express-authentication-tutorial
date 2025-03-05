@@ -1,0 +1,19 @@
+{
+	"name": "simple-web-server",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon",
+		"lint": "biome check --write .",
+		"format": "biome format --write ."
+	},
+	"dependencies": {
+		"dotenv": "^16.4.7",
+		"ejs": "^3.1.10",
+		"express": "^4.21.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"nodemon": "^3.1.9"
+	}
+}
